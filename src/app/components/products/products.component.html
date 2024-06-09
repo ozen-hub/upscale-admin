@@ -1,0 +1,76 @@
+<div class="outer" style="margin: 20px 0">
+
+  <div class="container">
+    <hr>
+    <h1>Products Management</h1>
+    <hr>
+    <div class="row">
+      <div class="col-4">
+        <form action="">
+          <input type="search" name="" id="" class="form-control" placeholder="search here">
+        </form>
+      </div>
+      <div class="col-4">
+        &nbsp;&nbsp;
+        <button class="btn btn-primary" (click)="openNewProductForm()">+ New Product</button>
+      </div>
+      <br>
+      <div class="col-12" style="margin-top: 50px">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#id</th>
+            <th>Description</th>
+            <th>QTY</th>
+            <th>Unit Price</th>
+            <th>Images</th>
+            <th>Tools</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <div class="context">
+                djh-23sd-sd &nbsp;
+                <mat-icon>content_copy</mat-icon>
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                description
+              </div>
+            </td>
+            <td>
+              <div class="context">
+               1323
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                $12500 | 342434LKR
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                <span (click)="openProductImageForm('?')">manage</span>
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                <button color="warn" mat-icon-button matTooltip="Delete"
+                        aria-label="Example icon-button with a heart icon">
+                  <mat-icon>delete_sweep</mat-icon>
+                </button>
+                <button (click)="openUpdateProductForm('?')" color="primary" mat-icon-button matTooltip="Update"
+                        aria-label="Example icon-button with a heart icon">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="outer" style="margin: 20px 0">
+
+  <div class="container">
+    <hr>
+    <h1>Customer Management</h1>
+    <hr>
+    <div class="row">
+      <div class="col-4">
+        <form action="">
+          <input type="search" name="" id="" class="form-control" placeholder="search here">
+        </form>
+      </div>
+      <br>
+      <div class="col-12" style="margin-top: 50px">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#id</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Full Name</th>
+            <th>Active Status</th>
+            <th>Contact</th>
+            <th>Tools</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <div class="context">
+                djh-23sd-sd &nbsp;
+                <mat-icon>content_copy</mat-icon>
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                colombo rd panadura
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                <a href="#">hasika{{'@'}}gmail.com</a>
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                Hasika Sandaruwan
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                <app-customer-status-manager [customer]="''"></app-customer-status-manager>
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                <a href="#">+941234567</a>
+              </div>
+            </td>
+            <td>
+              <div class="context">
+                <button color="warn" mat-icon-button matTooltip="Basic"
+                        aria-label="Example icon-button with a heart icon">
+                  <mat-icon>delete_sweep</mat-icon>
+                </button>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
