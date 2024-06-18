@@ -68,4 +68,6 @@ export class ProductsComponent {
   private loadAllProducts() {
 
   }
+
+  protected readonly confirm = confirm;
 }
