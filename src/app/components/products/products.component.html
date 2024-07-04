@@ -31,23 +31,24 @@
           <tr *ngFor="let item of dataList">
             <td>
               <div class="context">
-                {{item?.propertyId}} &nbsp;
-                <mat-icon>content_copy</mat-icon>
+                {{ item?.propertyId }} &nbsp;
+                <mat-icon (click)="copyText(item?.propertyId)">content_copy</mat-icon>
               </div>
             </td>
             <td>
               <div class="context">
-                {{item?.description}}
+                {{ item?.description }}
               </div>
             </td>
             <td>
               <div class="context">
-                {{item?.qty}}
+                {{ item?.qty }}
               </div>
             </td>
             <td>
               <div class="context">
-                {{item?.unitPrice | currency:'USD'}} | 342434LKR
+                {{ item?.unitPrice | currency:'USD' }} |
+                {{item?.unitPrice*rate | currency:'LKR'}}
               </div>
             </td>
             <td>
@@ -71,6 +72,17 @@
           </tbody>
         </table>
       </div>
+
+      <mat-paginator
+        [length]="count"
+        [pageIndex]="page"
+        [pageSize]="size"
+        [pageSizeOptions]="[1,10,20,30,40,50,60,70,80,90,100]"
+        (page)="getServerData($event)"
+      >
+
+      </mat-paginator>
+
     </div>
   </div>
 </div>

@@ -1,23 +1,23 @@
 <h2 mat-dialog-title>Update Product</h2>
-<form action="">
+<form [formGroup]="form" (ngSubmit)="update()">
   <mat-dialog-content class="mat-typography">
     <div class="col-12">
       <label for="description">Product Description</label>
-      <input type="text" class="form-control" placeholder="description" id="description">
+      <input type="text" formControlName="description" class="form-control" placeholder="description" id="description">
     </div>
     <br>
     <div class="col-12">
       <label for="unit_rice">Product Unit Price</label>
-      <input type="number" class="form-control" id="unit_rice">
+      <input type="number" formControlName="unitPrice" class="form-control" id="unit_rice">
     </div>
     <br>
     <div class="col-12">
       <label for="qty">Product QTY On Hand</label>
-      <input type="text" class="form-control" id="qty">
+      <input type="text" formControlName="qty" class="form-control" id="qty">
     </div>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+    <button mat-raised-button (click)="close()">Cancel</button>
+    <button mat-raised-button type="submit" color="primary">Update Product</button>
   </mat-dialog-actions>
 </form>

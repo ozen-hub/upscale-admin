@@ -1,15 +1,43 @@
 <h2 mat-dialog-title>Manage Product Images</h2>
-<form action="">
+<form [formGroup]="form" (ngSubmit)="uploadFile()">
   <mat-dialog-content class="mat-typography">
     <div class="col-12">
       <label for="file">Product Image</label>
-      <input type="file" class="form-control" id="file">
+      <input (change)="onFileSelected($event)" formControlName="image" type="file" class="form-control" id="file">
     </div>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+    <button type="submit" mat-raised-button cdkFocusInitial [disabled]="loading || form.invalid" color="primary">Upload Image</button>
   </mat-dialog-actions>
 </form>
 <hr>
-images
+
+<div class="image-outer" style="display: flex; align-items: center; overflow: auto">
+  <div class="image" style="border:1px solid red; width: 100px; min-width: 100px; height: 100px; min-height: 100px;">
+    <img src="" alt="">
+  </div>
+  <div class="image" style="border:1px solid red; width: 100px; min-width: 100px; height: 100px; min-height: 100px;">
+    <img src="" alt="">
+  </div>
+  <div class="image" style="border:1px solid red; width: 100px; min-width: 100px; height: 100px; min-height: 100px;">
+    <img src="" alt="">
+  </div>
+  <div class="image" style="border:1px solid red; width: 100px; min-width: 100px; height: 100px; min-height: 100px;">
+    <img src="" alt="">
+  </div>
+  <div class="image" style="border:1px solid red; width: 100px; min-width: 100px; height: 100px; min-height: 100px;">
+    <img src="" alt="">
+  </div>
+  <div class="image" style="border:1px solid red; width: 100px; min-width: 100px; height: 100px; min-height: 100px;">
+    <img src="" alt="">
+  </div>
+  <div class="image" style="border:1px solid red; width: 100px; min-width: 100px; height: 100px; min-height: 100px;">
+    <img src="" alt="">
+  </div>
+  <div class="image" style="border:1px solid red; width: 100px; min-width: 100px; height: 100px; min-height: 100px;">
+    <img src="" alt="">
+  </div>
+
+</div>
+
