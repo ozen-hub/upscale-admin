@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient, HttpParams} from "@angular/common/http";
+import {environment} from "../../../environments/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  baseUrl='http://localhost:8001/api/v1/products';
-  imageUrl='http://localhost:8001/api/v1/product-images';
+  baseUrl= environment.baseUrl;
 
   constructor(private http:HttpClient) { }
 
   create(obj:any):Observable<any>{
-    return this.http.post(this.baseUrl,{
+    return this.http.post(this.baseUrl+'products',{
       qty:obj.qty,
       unitPrice:obj.unitPrice,
       description:obj.description
@@ -25,15 +25,15 @@ export class ProductService {
     params=params.append('searchText', searchText);
     params=params.append('page', page);
     params=params.append('size', size);
-    return this.http.get(this.baseUrl+'/list',{params:params});
+    return this.http.get(this.baseUrl+'products/list',{params:params});
   }
 
   delete(id:any):Observable<any>{
-    return this.http.delete(this.baseUrl+'/'+id);
+    return this.http.delete(this.baseUrl+'products/'+id);
   }
 
   update(obj:any, id:any):Observable<any>{
-    return this.http.put(this.baseUrl+'/'+id,{
+    return this.http.put(this.baseUrl+'products/'+id,{
       qty:obj.qty,
       unitPrice:obj.unitPrice,
       description:obj.description
@@ -41,7 +41,7 @@ export class ProductService {
   }
 
   productImageUpload(data:FormData, productId:any):Observable<any>{
-    return this.http.post(this.imageUrl+'/'+productId,data)
+    return this.http.post(this.baseUrl+'product-images/'+productId,data)
   }
 
 }
