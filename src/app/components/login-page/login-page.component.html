@@ -1,3 +1,7 @@
-<p>login-page works!</p>
-<button class="btn btn-primary" routerLink="/dashboard">login</button>
+<form [formGroup]="form" (ngSubmit)="signup()">
+  <input type="email" formControlName="email" placeholder="email">&nbsp;
+  <input type="text" formControlName="displayName" placeholder="display Name">&nbsp;
+  <input type="password" formControlName="password" placeholder="Password">&nbsp;
+  <input type="submit" value="Login">
+</form>
 <button class="btn btn-primary" routerLink="/signup">Signup</button>

@@ -19,4 +19,11 @@ export class UserService {
       password:obj.password
     })
   }
+
+  login(obj:any):Observable<any>{
+    return this.http.post('http://localhost:8002/login',{
+      username:obj.username,
+      password:obj.password
+    })
+  }
 }
